@@ -1,0 +1,27 @@
+/// --------------------------------------------------
+/// base/_global.scss
+/// --------------------------------------------------
+/// This file is intended for defining global styles that
+/// apply across the entire project, such as base typography,
+/// default element styles, or utility classes. Use this file
+/// to set up foundational styles that are not covered by the
+/// CSS reset (see base/_reset.scss) but should be available
+/// everywhere. Keep these rules minimal and generic to avoid
+/// conflicts with component or layout-specific styles.
+/// --------------------------------------------------
+
+@use "@/assets/scss/abstracts" as *;
+
+* {
+   font-family: "Poppins", sans-serif;
+   font-size: px-to-rem(16);
+}
+
+body {
+   background-color: #021516;
+   background-image: url("@/assets/images/background.svg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   color: white;
+}
