@@ -21,9 +21,17 @@
    justify-content: center;
 
    p {
-      font-size: px-to-rem(128);
+      font-size: px-to-rem(96);
       font-weight: 700;
       opacity: 0.2;
+
+      @include tablet-up {
+         font-size: px-to-rem(112);
+      }
+
+      @include desktop-up {
+         font-size: px-to-rem(128);
+      }
    }
 
    &__overlay {

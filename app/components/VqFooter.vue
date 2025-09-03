@@ -11,7 +11,11 @@
 .vq-footer {
    text-align: center;
    padding: px-to-rem(24);
-   font-size: px-to-rem(14);
-   line-height: 1;
+   font-size: px-to-rem(12);
+
+   @include tablet-up {
+      font-size: px-to-rem(14);
+      line-height: 1;
+   }
 }
 </style>

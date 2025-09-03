@@ -28,9 +28,13 @@ const props = withDefaults(defineProps<{
    }
 
    &__inner {
-      padding: px-to-rem(32) px-to-rem(16);
+      padding: px-to-rem(24) px-to-rem(12);
       background-color: #003133;
       height: 100%;
+
+      @include tablet-up {
+         padding: px-to-rem(32) px-to-rem(16);
+      }
    }
 
    &__icon,
@@ -40,16 +44,42 @@ const props = withDefaults(defineProps<{
    }
 
    &__icon {
-      font-size: px-to-rem(64);
+      font-size: px-to-rem(48);
+      margin-bottom: px-to-rem(24);
+      line-height: 1;
+
+      @include tablet-up {
+         font-size: px-to-rem(56);
+      }
+
+      @include desktop-up {
+         font-size: px-to-rem(64);
+      }
    }
 
    &__title {
-      font-size: px-to-rem(24);
+      font-size: px-to-rem(18);
       font-weight: 600;
+
+      @include tablet-up {
+         font-size: px-to-rem(20);
+      }
+
+      @include desktop-up {
+         font-size: px-to-rem(24);
+      }
    }
 
    &__description {
-      font-size: px-to-rem(20);
+      font-size: px-to-rem(16);
+
+      @include tablet-up {
+         font-size: px-to-rem(18);
+      }
+
+      @include desktop-up {
+         font-size: px-to-rem(20);
+      }
    }
 }
 </style>

@@ -9,6 +9,22 @@
 /// you need access to these shared variables.
 /// --------------------------------------------------
 
+@use "sass:map";
+
 $z-index-map: (
    "header": 100,
 );
+
+// Responsive breakpoints
+$breakpoints: (
+   "mobile": 480px,
+   "tablet": 768px,
+   "desktop": 1024px,
+   "wide": 1200px
+);
+
+// Mobile-first approach - default styles are for mobile
+$mobile-max: map.get($breakpoints, "mobile");
+$tablet-min: map.get($breakpoints, "tablet");
+$desktop-min: map.get($breakpoints, "desktop");
+$wide-min: map.get($breakpoints, "wide");

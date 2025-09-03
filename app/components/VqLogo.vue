@@ -1,5 +1,21 @@
 <template>
-   <svg class="vq-logo" :height="props.height" viewBox="0 0 395 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <svg v-if="props.isSmall" class="vq-logo-small" :width="props.height" :height="props.height" viewBox="0 0 57 57"
+      fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+         d="M41.1995 26.5683C41.1995 18.0572 34.346 11.1576 25.8919 11.1576C17.4378 11.1576 10.5844 18.0572 10.5844 26.5683C10.5844 35.0793 17.4379 41.9789 25.8919 41.9789V48.2694L25.6134 48.2676C13.9294 48.1186 4.48576 38.6113 4.33778 26.8487L4.33594 26.5683C4.33594 14.583 13.9869 4.86707 25.8919 4.86707L26.1705 4.86891C37.9471 5.01907 47.448 14.6767 47.448 26.5683L47.4461 26.8487C47.297 38.7046 37.704 48.2694 25.8919 48.2694V41.9789C34.346 41.9789 41.1995 35.0793 41.1995 26.5683Z"
+         :fill="props.primaryColor" />
+      <path d="M24.1631 20.6461V32.4904H19.5939V20.6461H24.1631ZM31.2583 20.6461V32.4904H26.6891V20.6461H31.2583Z"
+         :fill="props.accentColor" />
+      <path d="M47.448 52.6754H38.0694L32.1325 45.5347L38.8275 42.9091L47.448 52.6754Z" :fill="props.primaryColor" />
+      <path
+         d="M38.9699 42.7818L47.8718 52.8671H37.9804L37.9235 52.7982L31.8164 45.4531L38.8818 42.6822L38.9699 42.7818ZM32.4485 45.6163L38.1585 52.4837H47.024L38.7728 43.1359L32.4485 45.6163Z"
+         :fill="props.primaryColor" />
+      <path d="M46.7837 21.1201L52.8948 28.61L47.4732 26.9414L42.5934 29.8466L46.7837 21.1201Z"
+         :fill="props.accentColor" />
+   </svg>
+
+   <svg v-else class="vq-logo" :height="props.height" viewBox="0 0 395 126" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_6_223)">
          <path d="M87.296 22.998L54.528 112.342H32.768L0 22.998H19.2L43.776 94.038L68.224 22.998H87.296Z"
             :fill="props.primaryColor" />
@@ -31,17 +47,23 @@
 const props = withDefaults(defineProps<{
    primaryColor?: string,
    accentColor?: string,
-   height?: string
+   height?: string,
+   isSmall?: boolean
 }>(), {
    primaryColor: "#F5F0BB",
    accentColor: "#73A9AD",
-   height: "48"
+   height: "48",
+   isSmall: false
 });
 
 </script>
 
-<style>
+<style lang="scss">
 .vq-logo {
+   width: fit-content;
+}
+
+.vq-logo-small {
    width: fit-content;
 }
 </style>

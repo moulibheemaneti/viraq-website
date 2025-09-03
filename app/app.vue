@@ -94,13 +94,25 @@ const features = [
    align-items: center;
    justify-content: center;
    margin: 0 auto;
-   gap: px-to-rem(32);
+   gap: px-to-rem(24);
    text-align: center;
+   padding: 0 px-to-rem(16);
+
+   @include tablet-up {
+      gap: px-to-rem(32);
+      padding: 0;
+   }
 }
 
 .section {
    flex-direction: column;
-   margin-top: px-to-rem(32);
+   margin-top: px-to-rem(24);
+   padding: 0 px-to-rem(16);
+
+   @include tablet-up {
+      margin-top: px-to-rem(32);
+      padding: 0;
+   }
 
    &,
    &__buttons {
@@ -110,10 +122,19 @@ const features = [
    }
 
    &__title {
-      font-size: px-to-rem(40);
+      font-size: px-to-rem(32);
       font-weight: 600;
       line-height: 1;
-      margin-bottom: px-to-rem(24);
+      margin-bottom: px-to-rem(16);
+
+      @include tablet-up {
+         font-size: px-to-rem(36);
+         margin-bottom: px-to-rem(24);
+      }
+
+      @include desktop-up {
+         font-size: px-to-rem(40);
+      }
 
       &>span {
          font-size: inherit;
@@ -124,19 +145,35 @@ const features = [
    }
 
    &__description {
-      font-size: px-to-rem(20);
+      font-size: px-to-rem(16);
       font-weight: 300;
       margin-bottom: px-to-rem(32);
+
+      @include tablet-up {
+         font-size: px-to-rem(18);
+      }
+
+      @include desktop-up {
+         font-size: px-to-rem(20);
+      }
    }
 
    &__buttons {
-      gap: px-to-rem(24);
+      gap: px-to-rem(16);
+
+      @include tablet-up {
+         gap: px-to-rem(24);
+      }
    }
 }
 
 .section--hero {
    .vq-logo {
-      margin-bottom: px-to-rem(32);
+      margin-bottom: px-to-rem(24);
+
+      @include tablet-up {
+         margin-bottom: px-to-rem(32);
+      }
    }
 }
 
@@ -145,19 +182,27 @@ const features = [
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   gap: px-to-rem(48);
+   gap: px-to-rem(32);
+
+   @include tablet-up {
+      gap: px-to-rem(48);
+   }
 }
 
 .features-list {
    display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   column-gap: px-to-rem(24);
-   row-gap: px-to-rem(32);
+   grid-template-columns: 1fr;
+   gap: px-to-rem(24);
+
+   @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: px-to-rem(24);
+      row-gap: px-to-rem(32);
+   }
 
    &>* {
       min-width: 0;
       width: 100%;
    }
-
 }
 </style>

@@ -6,3 +6,37 @@
 /// mixin definitions here to keep them organized and
 /// easily accessible from other SCSS files.
 /// --------------------------------------------------
+
+@use "variables" as *;
+
+// Mobile-first responsive mixins
+@mixin tablet-up {
+   @media (min-width: $tablet-min) {
+      @content;
+   }
+}
+
+@mixin desktop-up {
+   @media (min-width: $desktop-min) {
+      @content;
+   }
+}
+
+@mixin wide-up {
+   @media (min-width: $wide-min) {
+      @content;
+   }
+}
+
+// Specific breakpoint mixins
+@mixin mobile-only {
+   @media (max-width: $mobile-max) {
+      @content;
+   }
+}
+
+@mixin tablet-only {
+   @media (min-width: $tablet-min) and (max-width: #{$desktop-min - 1px}) {
+      @content;
+   }
+}

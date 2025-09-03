@@ -28,9 +28,17 @@ const computedClasses = computed(() => {
    color: #fff;
    min-width: fit-content;
 
-   font-size: px-to-rem(18);
+   font-size: px-to-rem(14);
    font-weight: 600;
    line-height: 1;
+
+   @include tablet-up {
+      font-size: px-to-rem(16);
+   }
+
+   @include desktop-up {
+      font-size: px-to-rem(18);
+   }
 
    &:hover {
       opacity: 0.8;

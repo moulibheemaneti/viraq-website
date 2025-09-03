@@ -1,6 +1,6 @@
 <template>
    <header class="vq-header">
-      <vq-logo />
+      <vq-logo is-small />
 
       <nav class="vq-header__nav">
          <div v-for="item in navItems" :key="item.id"
@@ -95,23 +95,48 @@ onUnmounted(() => {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: px-to-rem(16) px-to-rem(24);
+   padding: px-to-rem(12) px-to-rem(16);
 
    background-color: rgba($color: #021516, $alpha: 0.2);
    backdrop-filter: blur(px-to-rem(24));
    box-shadow: 0 4px 16px 0 rgba($color: #021516, $alpha: 0.6);
 
+   @include tablet-up {
+      padding: px-to-rem(16) px-to-rem(24);
+   }
+
+
+   @include mobile-only {
+      gap: px-to-rem(16);
+      padding: px-to-rem(16);
+   }
+
    &__nav {
       flex: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: px-to-rem(24);
+      gap: px-to-rem(16);
+      flex-direction: row;
+
+      @include mobile-only {
+         display: none;
+      }
+
+      @include tablet-up {
+         gap: px-to-rem(24);
+      }
    }
 
    &__nav-item {
       color: #8E8E8E;
       font-weight: 500;
+      font-size: px-to-rem(14);
+
+      @include tablet-up {
+         font-size: px-to-rem(16);
+      }
 
       &.active,
       &:hover {
