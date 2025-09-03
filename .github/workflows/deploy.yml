@@ -3,7 +3,7 @@ name: Deploy Nuxt to GitHub Pages
 on:
   push:
     branches:
-      - master   # or main if that's your branch
+      - master   # or main
 
 jobs:
   deploy:
@@ -17,13 +17,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22
-          cache: 'yarn'
 
       - name: Enable Corepack
         run: corepack enable
 
-      - name: Use correct Yarn version
-        run: corepack install
+      - name: Use Yarn version from packageManager
+        run: corepack use yarn
 
       - name: Install dependencies
         run: yarn install --immutable
