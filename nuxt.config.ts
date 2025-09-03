@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       preset: 'github-pages'
    },
    app: {
-      baseURL: "/viraq-app",
+      baseURL: "/viraq-website",
       head: {
          title: "ViraQ",
          link: [
