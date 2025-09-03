@@ -3,7 +3,7 @@ name: Deploy Nuxt to GitHub Pages
 on:
   push:
     branches:
-      - main  # 👈 or your default branch
+      - master   # 👈 or main, depending on your repo
 
 jobs:
   deploy:
@@ -17,12 +17,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22
+          cache: 'yarn'   # 👈 enables Yarn cache
 
       - name: Install dependencies
-        run: npm ci
+        run: yarn install --immutable   # 👈 Yarn 4 equivalent of npm ci
 
       - name: Generate static site
-        run: npm run generate
+        run: yarn generate
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
