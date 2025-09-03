@@ -5,8 +5,11 @@ export default defineNuxtConfig({
    devtools: { enabled: true },
 
    ssr: false,
-
+   nitro: {
+      preset: 'github-pages'
+   },
    app: {
+      baseURL: "/viraq-app",
       head: {
          title: "ViraQ",
          link: [
