@@ -17,7 +17,7 @@
          </p>
 
          <div class="section__buttons">
-            <vq-button>Download App</vq-button>
+            <vq-button @click="handleDownloadApp">Download App</vq-button>
             <vq-button variant="outline">Learn More</vq-button>
          </div>
 
@@ -43,6 +43,8 @@
 </template>
 
 <script lang="ts" setup>
+import { handleDownloadApp } from '~/utils/helpers';
+
 const aboutData = [
    {
       id: 1,

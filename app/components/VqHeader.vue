@@ -9,11 +9,13 @@
             {{ item.label }}
          </div>
       </nav>
-      <vq-button>Download App</vq-button>
+      <vq-button @click="handleDownloadApp">Download App</vq-button>
    </header>
 </template>
 
 <script lang="ts" setup>
+import { handleDownloadApp } from '~/utils/helpers';
+
 const navItems = [
    {
       id: 1,
