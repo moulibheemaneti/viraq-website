@@ -1,6 +1,6 @@
 
 export const handleDownloadApp = () => {
-   window.open("/variq.dmg");
+   window.open("/viraq-website/variq.dmg");
    // Show a toast message indicating download started
    // If you use a global $toast or similar, adjust as needed
    if (typeof window !== "undefined" && (window as any).$toast) {
